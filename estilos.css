@@ -1,12 +1,20 @@
+@font-face {
+    font-family: 'Blade Runner';
+    src: url('BLADRMF_.TTF');
+}
 body{
     margin: 0;
+    background-image: url('media/img/background.jpeg');
+    background-size: cover;
+    font-family: 'Blade Runner';
 }
 header{
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    background-color: aqua;
     align-items: center;
+    color: white;
+    font-size: 2rem;
 }
 header .info-jugador{
     display: flex;
@@ -24,4 +32,58 @@ header .info-jugador{
 #form{
     display: flex;
     justify-content: center;
+    color: white;
+}
+form input[type="text"]{
+    padding: 0.6rem;
+    font-size: 1.1em;
+    background-color: #00000077;
+    color: white;
+    border: 2px dotted ghostwhite;
+}
+form input[type="button"]{
+    padding: 0.6rem;
+    font-size: 1.1em;
+    font-family: 'Blade Runner';
+    color: white;
+    background: rgb(14,14,13);
+background: linear-gradient(100deg, rgba(14,14,13,0.8309917717086834) 43%, rgba(217,13,13,0.8281906512605042) 72%);
+}
+#contenedor-manos{
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+    gap: 20px;
+    display: none;
+    margin-top: 10%;
+}
+button{
+    width: 50%;
+    height: 30vh;
+    border: 0;
+    padding: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgb(14,14,13);
+background: linear-gradient(100deg, rgba(14,14,13,0.8309917717086834) 43%, rgba(217,13,13,0.8281906512605042) 72%);
+}
+button img{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+#resultado-ronda{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-direction: column;
+}
+#resultado-ronda span{
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+}
+#nueva{
+    display: none;
 }

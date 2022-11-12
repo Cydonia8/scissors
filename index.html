@@ -13,15 +13,15 @@
     <header>
         <div class="info-jugador">
             <span id="nombre-jugador"></span>
-            <span>0</span>
+            <span id="puntos-jugador">0</span>
         </div>
         <div class="info-jugador">
             <span id="titulo-juego">Piedra, papel o tijera</span>
-            <span>Ronda:</span>
+            <span id="ronda">ronda:</span>
         </div>
         <div class="info-jugador">
-            <span>HAL 9000</span>
-            <span>0</span>
+            <span></span>
+            <span id="puntos-maquina">0</span>
         </div>
     </header>
     <main>
@@ -30,12 +30,24 @@
                 <h2>Nombre para la partida</h2>
                 <input type="text" id="input-usu" placeholder="Introduce nombre de jugador">
                 <input type="button" value="Aceptar" id="enviar">
+                <input type="button" value="Nueva partida" id="nueva">
             </form>
         </section>
         <section id="contenedor-manos">
-            <button></button>
-            <button></button>
-            <button></button>
+            <button id="piedra">
+                <img src="media/img/piedra.png" alt="">
+            </button>
+            <button id="papel">
+                <img src="media/img/papel.png" alt="">
+            </button>
+            <button id="tijera">
+                <img src="media/img/tijera.png" alt="">
+            </button>
+        </section>
+        <section id="resultado-ronda">
+            <span id="resumen-eleccion"></span>
+            <span id="resultado"></span>
+            <span></span>
         </section>
     </main>
 </body>
