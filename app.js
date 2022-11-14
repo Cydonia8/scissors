@@ -25,12 +25,14 @@ console.log(botones);
 enviar.addEventListener("click", ()=>{
     nombre_jugador = document.getElementById("input-usu").value;
     info_nombre_jugador.innerText=nombre_jugador;
+    document.getElementById("input-usu").setAttribute("disabled", true);    
     cont_manos.style.display="flex";
     total_maquina.previousElementSibling.innerText=nombre_maquina;
 });
 
 
 cont_manos.addEventListener("click", (evento)=>{
+    document.getElementById("enviar").setAttribute("disabled", true);
     const pulsado = evento.target.parentElement;
     opcion_jugador = pulsado.getAttribute("id");
     opcion_maquina = array_opciones[Math.floor(Math.random() * array_opciones.length)];
@@ -61,9 +63,8 @@ cont_manos.addEventListener("click", (evento)=>{
         let ganador_juego = finJuego(puntos_jugador, puntos_maquina, nombre_jugador, nombre_maquina);
         resultado_ronda.nextElementSibling.innerText=`¡El ganador es ${ganador_juego}!`;
         nueva_partida.style.display="inline-block";
-        botones.forEach((boton)=>{//Por qué no funciona?
-            boton.disabled=true;
-            console.log(boton)
+        botones.forEach((boton)=>{
+            boton.hidden=true;
         })
 
     }   
@@ -79,10 +80,9 @@ nueva_partida.addEventListener("click", ()=>{
     resultado_ronda.innerText="";
     resultado_ronda.nextElementSibling.innerText="";
     resultado_ronda.previousElementSibling.innerText="";
-    // botones.forEach((boton)=>{
-    //     boton.setAttribute("disabled", false);
-    //     console.log(boton);
-    // })
+    botones.forEach((boton)=>{
+        boton.hidden=false;
+    })
 })
 
 function finJuego(puntos_jug, puntos_maq, nombre_jug, nombre_maq){
